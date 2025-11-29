@@ -5,11 +5,6 @@ create or replace package agito.TU_Police is
   29/05/2013 10:26:00
   */
 
-  -- Yazar                          : HSIPAHI
-  -- Tarih                          : 29.05.2013 10:26:00
-  -- ��lev                          : police tablosuna veri yazma i�lemi i�in yap�lm��t�r.
-  -- %param p_rec                   : police tablosu veri listesidir.
-
   procedure add(p_rec in out nocopy TYT_Police);
 
 
@@ -31,10 +26,6 @@ create or replace package agito.TU_Police is
   procedure del(p_polid    in number,
                 p_rowcount in boolean := true);
 
-  -- Yazar                          : HSIPAHI
-  -- Tarih                          : 29.05.2013 10:26:00
-  -- ��lev                          : police tablosundan veri okuma i�lemi i�in yap�lm��t�r.
-  -- %param  p_polid                : Poli�e kay�t numaras�d�r.
   function read(p_polid in number) return TYT_Police;
 
   -- Yazar                          : ugur.kocak
