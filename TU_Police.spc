@@ -14,9 +14,5 @@ create or replace package agito.TU_Police is
 
   function oku(p_polid in number) return TYT_Police;
 
-  -- Yazar                          : ugur.kocak
-  -- Tarih                          : 20.11.2013 15:45:54
-  function policeNoİleOku(p_policeNo varchar2) return TYT_Police;
-
 end;
 /
