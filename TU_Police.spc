@@ -5,6 +5,7 @@ create or replace package agito.TU_Police is
   29/05/2013 10:26:00
   */
 
+
   -- Yazar                          : HAMDI.SIPAHI
   -- Tarih                          : 20.11.2013 15:45:54
   procedure ekle(p_rec in out nocopy TYT_Police);
