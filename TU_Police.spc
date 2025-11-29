@@ -19,7 +19,7 @@ create or replace package agito.TU_Police is
   function oku(p_polid in number) return TYT_Police;
 
 
-  function deneme(p_polid in number) return TYT_Police;
+  function xyz(p_polid in number) return TYT_Police;
 
 end;
 /
