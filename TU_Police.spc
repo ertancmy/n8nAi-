@@ -114,7 +114,6 @@ create or replace package agito.TU_Police is
                 p_bsmv      in number);
 
   -- Yazar                          : HSIPAHI
-  -- Tarih                          : 24.09.2013 10:26:00
   -- ��lev                          : police tablosundan veri okuma i�lemi i�in yap�lm��t�r.
   -- %param p_polid                 : Poli�e kay�t numaras�d�r.
   -- %param r_pol                   : sonpol tipinde veri bilgisi
