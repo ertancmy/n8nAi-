@@ -7,43 +7,45 @@ create or replace package agito.TU_Police is
 
   -- Yazar                          : HSIPAHI
   -- Tarih                          : 29.05.2013 10:26:00
-  -- Ýþlev                          : police tablosuna veri yazma iþlemi için yapýlmýþtýr.
+  -- ï¿½ï¿½lev                          : police tablosuna veri yazma iï¿½lemi iï¿½in yapï¿½lmï¿½ï¿½tï¿½r.
   -- %param p_rec                   : police tablosu veri listesidir.
 
   procedure add(p_rec in out nocopy TYT_Police);
 
+
+
   -- Yazar                          : HAMDI.SIPAHI
   -- Tarih                          : 20.11.2013 15:45:54
-  -- Ýþlev                          : police tablosundaki verilerde deðiþiklik iþlemi için yapýlmýþtýr.
+  -- ï¿½ï¿½lev                          : police tablosundaki verilerde deï¿½iï¿½iklik iï¿½lemi iï¿½in yapï¿½lmï¿½ï¿½tï¿½r.
   -- %param p_rec                   : police tablosu veri listesidir.
-  -- %param p_Compare               : deðerin true olmasý durumunda gelen bilgiler ile eski veriler kontrol edilir
-  --                                  verilerde deðiþiklik yoksa tablo update iþlemi yapýlmaz 
+  -- %param p_Compare               : deï¿½erin true olmasï¿½ durumunda gelen bilgiler ile eski veriler kontrol edilir
+  --                                  verilerde deï¿½iï¿½iklik yoksa tablo update iï¿½lemi yapï¿½lmaz 
   procedure upd(p_rec     in out nocopy TYT_Police,
                 p_Compare in boolean := true);
 
   -- Yazar                          : HSIPAHI
   -- Tarih                          : 29.05.2013 10:26:00
-  -- Ýþlev                          : police tablosundan veri silme iþlemi için yapýlmýþtýr.
-  -- %param p_polid                 : Poliçe kayýt numarasýdýr.
+  -- ï¿½ï¿½lev                          : police tablosundan veri silme iï¿½lemi iï¿½in yapï¿½lmï¿½ï¿½tï¿½r.
+  -- %param p_polid                 : Poliï¿½e kayï¿½t numarasï¿½dï¿½r.
 
   procedure del(p_polid    in number,
                 p_rowcount in boolean := true);
 
   -- Yazar                          : HSIPAHI
   -- Tarih                          : 29.05.2013 10:26:00
-  -- Ýþlev                          : police tablosundan veri okuma iþlemi için yapýlmýþtýr.
-  -- %param  p_polid                : Poliçe kayýt numarasýdýr.
+  -- ï¿½ï¿½lev                          : police tablosundan veri okuma iï¿½lemi iï¿½in yapï¿½lmï¿½ï¿½tï¿½r.
+  -- %param  p_polid                : Poliï¿½e kayï¿½t numarasï¿½dï¿½r.
   function read(p_polid in number) return TYT_Police;
 
   -- Yazar                          : ugur.kocak
-  -- Ýþlev                          : policeNo alanina gore police kaydi doner
+  -- ï¿½ï¿½lev                          : policeNo alanina gore police kaydi doner
   function readByPoliceNo(p_policeNo varchar2) return TYT_Police;
 
   -- Yazar                          : HSIPAHI
   -- Tarih                          : 29.05.2013 10:26:00
-  -- Ýþlev                          : police tablosundan veri okuma iþlemi için yapýlmýþtýr.
-  -- %param  p_polid                : Poliçe kayýt numarasýdýr.
-  -- %param p_zeylno                : Zeylname numarasý.
+  -- ï¿½ï¿½lev                          : police tablosundan veri okuma iï¿½lemi iï¿½in yapï¿½lmï¿½ï¿½tï¿½r.
+  -- %param  p_polid                : Poliï¿½e kayï¿½t numarasï¿½dï¿½r.
+  -- %param p_zeylno                : Zeylname numarasï¿½.
   -- %param r_pol                   : policeview tipinde veri bilgisi
   procedure readPolice(p_polid  in number,
                        p_zeylno in number,
@@ -51,22 +53,22 @@ create or replace package agito.TU_Police is
 
   -- Yazar                          : HSIPAHI
   -- Tarih                          : 29.05.2013 10:26:00
-  -- Ýþlev                          : Grup poliçesine ait bilgileri verir.
-  -- %param  p_polid                : Poliçe kayýt numarasýdýr.
+  -- ï¿½ï¿½lev                          : Grup poliï¿½esine ait bilgileri verir.
+  -- %param  p_polid                : Poliï¿½e kayï¿½t numarasï¿½dï¿½r.
   function readGroupPolicy(p_polid in number) return TYT_Police;
 
   -- Yazar                          : HSIPAHI
   -- Tarih                          : 29.05.2013 10:26:00
-  -- Ýþlev                          : police tablosundan kayit varmý kontrol eder .
-  -- %param  p_polid                : Poliçe kayýt numarasýdýr.
+  -- ï¿½ï¿½lev                          : police tablosundan kayit varmï¿½ kontrol eder .
+  -- %param  p_polid                : Poliï¿½e kayï¿½t numarasï¿½dï¿½r.
 
   function recordExists(p_polid in number) return boolean;
 
   -- Yazar                          : HSIPAHI
   -- Tarih                          : 29.05.2013 10:26:00
-  -- Ýþlev                          : police tablosundan kayit varmý kontrol eder .
-  -- %param  p_polid                : Poliçe kayýt numarasýdýr.
-  -- %param p_branskod              : Branþ kodu
+  -- ï¿½ï¿½lev                          : police tablosundan kayit varmï¿½ kontrol eder .
+  -- %param  p_polid                : Poliï¿½e kayï¿½t numarasï¿½dï¿½r.
+  -- %param p_branskod              : Branï¿½ kodu
   function recordExists(p_polid    in number,
                         p_branskod in varchar2) return boolean;
 
@@ -77,12 +79,12 @@ create or replace package agito.TU_Police is
 
   -- Yazar                          : HSIPAHI
   -- Tarih                          : 19.09.2013 10:26:00
-  -- Ýþlev                          : Poliçeye ait bazý bilgileri sonpol üzerinden döner.
-  -- %param p_grupid                : Grup poliçesine ait poliçe kayýt numarasý.
-  -- %param p_polid                 : Katýlýmcýya ait poliçe kayýt numarasý.
-  -- %param p_kimlikno              : Katýlýmcýya ait kimlik numarasý.
-  -- %param p_sandikNo              : Katýlýmcýya ait sandýk numarasý.
-  -- %param p_sicilNo               : Katýlýmcýya ait sicil numarasý.
+  -- ï¿½ï¿½lev                          : Poliï¿½eye ait bazï¿½ bilgileri sonpol ï¿½zerinden dï¿½ner.
+  -- %param p_grupid                : Grup poliï¿½esine ait poliï¿½e kayï¿½t numarasï¿½.
+  -- %param p_polid                 : Katï¿½lï¿½mcï¿½ya ait poliï¿½e kayï¿½t numarasï¿½.
+  -- %param p_kimlikno              : Katï¿½lï¿½mcï¿½ya ait kimlik numarasï¿½.
+  -- %param p_sandikNo              : Katï¿½lï¿½mcï¿½ya ait sandï¿½k numarasï¿½.
+  -- %param p_sicilNo               : Katï¿½lï¿½mcï¿½ya ait sicil numarasï¿½.
   function getSonpol(p_grupid   in police.polid%type,
                      p_polid    in police.polid%type,
                      p_kimlikno in person.kimlikno%type,
@@ -91,11 +93,11 @@ create or replace package agito.TU_Police is
 
   -- Yazar                          : HSIPAHI
   -- Tarih                          : 19.09.2013 10:26:00
-  -- Ýþlev                          : Poliçeye ait bazý bilgileri sonpol üzerinden döner.
-  -- %param p_polid                 : Katýlýmcýya ait poliçe kayýt numarasý.
-  -- %param p_zeylNo                : Zeylname numarasý.
-  -- %param p_katilimTip            : Katýlým tipi.
-  -- %param p_yilprim               : Yýllýk prim tutarý
+  -- ï¿½ï¿½lev                          : Poliï¿½eye ait bazï¿½ bilgileri sonpol ï¿½zerinden dï¿½ner.
+  -- %param p_polid                 : Katï¿½lï¿½mcï¿½ya ait poliï¿½e kayï¿½t numarasï¿½.
+  -- %param p_zeylNo                : Zeylname numarasï¿½.
+  -- %param p_katilimTip            : Katï¿½lï¿½m tipi.
+  -- %param p_yilprim               : Yï¿½llï¿½k prim tutarï¿½
   function getHesapPrim(p_polid      in number,
                         p_zeylNo     in number,
                         p_katilimTip in varchar2,
@@ -103,9 +105,9 @@ create or replace package agito.TU_Police is
 
   -- Yazar                          : HSIPAHI
   -- Tarih                          : 19.09.2013 10:26:00
-  -- Ýþlev                          : Poliçeye ait zeyl bilgileri üzerinde net prim ve bsmv tutarýný günceller.
-  -- %param p_polid                 : Katýlýmcýya ait poliçe kayýt numarasý.
-  -- %param p_hesapPrim             : Katýlýmcýya ait hesaplanan prim tutarý.
+  -- ï¿½ï¿½lev                          : Poliï¿½eye ait zeyl bilgileri ï¿½zerinde net prim ve bsmv tutarï¿½nï¿½ gï¿½nceller.
+  -- %param p_polid                 : Katï¿½lï¿½mcï¿½ya ait poliï¿½e kayï¿½t numarasï¿½.
+  -- %param p_hesapPrim             : Katï¿½lï¿½mcï¿½ya ait hesaplanan prim tutarï¿½.
   -- %param p_bsmv                  : Vergi.
   procedure upd(p_polid     in number,
                 p_hesapPrim in number,
@@ -113,28 +115,28 @@ create or replace package agito.TU_Police is
 
   -- Yazar                          : HSIPAHI
   -- Tarih                          : 24.09.2013 10:26:00
-  -- Ýþlev                          : police tablosundan veri okuma iþlemi için yapýlmýþtýr.
-  -- %param p_polid                 : Poliçe kayýt numarasýdýr.
+  -- ï¿½ï¿½lev                          : police tablosundan veri okuma iï¿½lemi iï¿½in yapï¿½lmï¿½ï¿½tï¿½r.
+  -- %param p_polid                 : Poliï¿½e kayï¿½t numarasï¿½dï¿½r.
   -- %param r_pol                   : sonpol tipinde veri bilgisi
   procedure readPolice(p_polid in number,
                        r_pol   in out nocopy sonpol%rowtype);
 
-  -- Yazar                          : Ergün Altunbayrak
+  -- Yazar                          : Ergï¿½n Altunbayrak
   -- Tarih                          : 01.11.2013 09:55:00
-  -- Ýþlev                          : Verilen poliçe numarasýna ait police id yi döndürür
-  -- %param p_polno                 : Poliçe numarasýdýr.
-  -- return number                  : Poliçe Id
+  -- ï¿½ï¿½lev                          : Verilen poliï¿½e numarasï¿½na ait police id yi dï¿½ndï¿½rï¿½r
+  -- %param p_polno                 : Poliï¿½e numarasï¿½dï¿½r.
+  -- return number                  : Poliï¿½e Id
   function getPolIdByPolNumber(p_polNo in varchar2) return number;
 
-  -- Yazar                          : Uygar Uludað     
+  -- Yazar                          : Uygar Uludaï¿½     
   -- Tarih                          : 18.03.2014
-  -- Ýþlev                          : Polid ile poliçe no sorgulama
+  -- ï¿½ï¿½lev                          : Polid ile poliï¿½e no sorgulama
   -- %param p_polid                 : Police id
   function getPoliceNoByPolid(p_polid in number) return varchar2;
 
   -- Yazar                          : HAMDI.SIPAHI
   -- Tarih                          : 20.11.2013 15:45:54
-  -- Ýþlev                          : t_police tablosundaki verilerde deðiþiklik varmý yokmu kontrol eder deðiþiklik yoksa true döndürür
+  -- ï¿½ï¿½lev                          : t_police tablosundaki verilerde deï¿½iï¿½iklik varmï¿½ yokmu kontrol eder deï¿½iï¿½iklik yoksa true dï¿½ndï¿½rï¿½r
   -- %param p_tytNew                : t_police tablosu veri listesidir.
   -- %param p_tytOld                : t_police tablosundaki verinin son halinidir.
   function equal(p_tytNew in tyt_POLICE,
@@ -142,45 +144,45 @@ create or replace package agito.TU_Police is
 
   -- Yazar                          : HAMDI.SIPAHI
   -- Tarih                          : 20.11.2013 15:45:54
-  -- Ýþlev                          : t_police tablosundaki karekter alanlarýn deðerlerini upper case olarak set eder
+  -- ï¿½ï¿½lev                          : t_police tablosundaki karekter alanlarï¿½n deï¿½erlerini upper case olarak set eder
   -- %param p_rec                   : t_police tablosu veri listesidir.
   procedure upper(p_rec in out nocopy tyt_POLICE);
 
   -- Yazar                          : HAMDI.SIPAHI
   -- Tarih                          : 20.11.2013 15:45:54
-  -- Ýþlev                          : t_police tablosundaki karekter alanlarýn deðerlerini lower case olarak set eder
+  -- ï¿½ï¿½lev                          : t_police tablosundaki karekter alanlarï¿½n deï¿½erlerini lower case olarak set eder
   -- %param p_rec                   : t_police tablosu veri listesidir.
   procedure lower(p_rec in out nocopy tyt_POLICE);
 
   -- Yazar                          : HSIPAHI
   -- Tarih                          : 17.12.2013 10:26:00
-  -- Ýþlev                          : Poliçe statusunu günceller.
-  -- %param p_polid                 : Katýlýmcýya ait poliçe kayýt numarasý.
-  -- %param p_status                : Poliçe statü bilgisi
-  -- %param p_substatus             : Poliçe alt statü bilgisi
+  -- ï¿½ï¿½lev                          : Poliï¿½e statusunu gï¿½nceller.
+  -- %param p_polid                 : Katï¿½lï¿½mcï¿½ya ait poliï¿½e kayï¿½t numarasï¿½.
+  -- %param p_status                : Poliï¿½e statï¿½ bilgisi
+  -- %param p_substatus             : Poliï¿½e alt statï¿½ bilgisi
   procedure updStatus(p_polid     in number,
                       p_status    in varchar2,
                       p_substatus in varchar2);
 
-  -- Yazar                           : Ergün Altunbayrak
+  -- Yazar                           : Ergï¿½n Altunbayrak
   -- Tarih                           : 26.02.2014
-  -- Ýþlev                           : Poliçenin meri statüsünde olup olmadýðýný sorgular
-  -- %param p_polid                  : Poliçe kayýt numarasý
+  -- ï¿½ï¿½lev                           : Poliï¿½enin meri statï¿½sï¿½nde olup olmadï¿½ï¿½ï¿½nï¿½ sorgular
+  -- %param p_polid                  : Poliï¿½e kayï¿½t numarasï¿½
   -- %return boolean
   function isActivePolicy(p_polid in number) return boolean;
 
-  -- Yazar                           : Kadir Köse
+  -- Yazar                           : Kadir Kï¿½se
   -- Tarih                           : 06.04.2015
-  -- Ýþlev                           : Gönderilen Type xml le dönüþtürü
+  -- ï¿½ï¿½lev                           : Gï¿½nderilen Type xml le dï¿½nï¿½ï¿½tï¿½rï¿½
   Function GetXmlType(p_rec In tyt_police) Return xmltype;
 
   function generateUpdateScript(p_tytNew in tyt_POLICE,
                                 p_tytOld in tyt_POLICE default null) return clob;
 
-  -- Yazar                          : KADÝR KÖSE
+  -- Yazar                          : KADï¿½R Kï¿½SE
   -- Tarih                          : 24.12.2015
-  -- Ýþlev                          : Poliçenin ilk vade Tarihini Günceller
-  -- %param p_polid                 : Katýlýmcýya ait poliçe kayýt numarasý.
+  -- ï¿½ï¿½lev                          : Poliï¿½enin ilk vade Tarihini Gï¿½nceller
+  -- %param p_polid                 : Katï¿½lï¿½mcï¿½ya ait poliï¿½e kayï¿½t numarasï¿½.
   procedure updIlkVade(p_polid      in number,
                        p_IlkVadeTar In Date);
 
@@ -190,13 +192,13 @@ create or replace package agito.TU_Police is
   function getBransDsp(p_polid number) return varchar2;
   
   --------------------------------------------------------------------------------------------------------------------
-  -- Poliçe nin iptal olup olmadýðýný döndüren fonksiyon
-  -- %author                DUYGU ÇOLAK
+  -- Poliï¿½e nin iptal olup olmadï¿½ï¿½ï¿½nï¿½ dï¿½ndï¿½ren fonksiyon
+  -- %author                DUYGU ï¿½OLAK
   -- %crtDate               18.07.2022
   -- %updDate
-  -- %usage                 Poliçe nin statüsünün statmap tablosundaki karþýlýðýnda iptal durumu T ise
-  -- %usage                 poliçe iptal edilmiþ demektir, fonksiyon T döndürür. 
-  -- %param  p_polid        Poliçe Numarasý
+  -- %usage                 Poliï¿½e nin statï¿½sï¿½nï¿½n statmap tablosundaki karï¿½ï¿½lï¿½ï¿½ï¿½nda iptal durumu T ise
+  -- %usage                 poliï¿½e iptal edilmiï¿½ demektir, fonksiyon T dï¿½ndï¿½rï¿½r. 
+  -- %param  p_polid        Poliï¿½e Numarasï¿½
   function isCanceledPolicy(p_polid in number) return boolean;  
 
 end;
